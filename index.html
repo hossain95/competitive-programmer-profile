@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmer Profile</title>
+    <!--bootstrap----------------------------------------------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <!--bootstrap end------------------------------------------>
+    <!--icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--icon end-->
+    <!--css start---------------------------------------------->
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/output.css">
+    <link rel="stylesheet" href="style/developer.css">
+    <!--css end------------------------------------------------>
+</head>
+<body id="body-pd" class="bg-light">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" id="home" class="nav_logo"> <span class="nav_logo-name">Home</span> </a>
+                <div class="nav_list">
+                    <H6>-----------------------</H6>
+                    <h5 style="color: white; padding-left: 5px;">Codeforces</h5>
+                    <a href="#" class="nav_link" id="organizationStanding"> <p>Org.Standing</p></a>
+                    <a href="#" class="nav_link" id="countryStanding"> <p>Country Standing</p> </a>
+                    <a href="#" class="nav_link" id="profile"> <p>Profile</p> </a>
+                    <a href="#" class="nav_link" id="compareProfile"> <p>Compare Profile</p></a>
+                    <a href="#" class="nav_link" id="upCommingContest"><p>Contest</p></a>
+                    <H6>-----------------------</H6>
+                    <h5 style="color: white; padding-left: 5px;">CodeChef</h5>
+                    <a href="#" class="nav_link" id="codechefProfile"> <p>Profile</p> </a>
+                    <H6>-----------------------</H6>
+                    <h5 style="color: white; padding-left: 5px;">AtCoder</h5>
+                    <a href="#" class="nav_link" id="atcodeProfile"> <p>Profile</p> </a>
+                    <H6>-----------------------</H6>
+                    <h6 style="color: white; padding-left: 5px;">Developer Profile</h6>
+                    <a href="#" class="nav_link" id="developer"><p>Developer</p></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!--input-->
+    <div class="container-fluid" id="input">
+        <!--Profile Start-->
+        <div class="container" id="profileInput" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <form class="justify-content-center mt-4" id="formProfile">
+                        <input type="text" class="form-control border border-primary" placeholder="Codeforces handle" id="user" required>
+                        <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Profile Start end-->
+        <!--Compare profile start------------------------------------------------------------------------------------------------------------------------------->
+        <div class="container" id="compareProfileInput" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <form class="justify-content-center mt-4" id="formCompareProfile">
+                        <input type="text" class="form-control border border-primary" placeholder="Codeforces first user handle" id="user1" required>
+                        <input type="text" class="form-control border border-primary mt-2" placeholder="Codeforces second user handle" id="user2" required>
+                        <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Compare profile end--------------------------------------------------------------------------------------------------------------------------------->
+        <!--Organization standing start------------------------------------------------------------------------------------------------------------------------------->
+        <div class="container" id="organizationStandingInput" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <form class="justify-content-center mt-4" id="formOrganization">
+                        <input list="listOrg" type="text" class="form-control border border-primary" placeholder="Organization Name" id="OrganizationName" required>
+                        <datalist id="listOrg">
+                            
+                        </datalist>
+                        <input type="text" list="listContestIdOrg" class="form-control border border-primary mt-1" placeholder="Codeforces Contest Id" id="ContestId" required>
+                        <datalist id="listContestIdOrg">
+                            
+                        </datalist>
+                        <input type="text" class="form-control border border-primary mt-1" placeholder="Codeforces handle (optional)" name="" id="orgHandle">
+                        <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Organization standing end--------------------------------------------------------------------------------------------------------------------------------->
+        <!--Country Standing start------------------------------------------------------------------------------------------------------------------------------->
+        <div class="container" id="countryStandingInput" style="display: none;"> 
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <form class="justify-content-center mt-4" id="formCountry">
+                        <!--<select class="form-control border border-primary mt-2" name="" id="CountryName"><option value="">Choose Country...</option></select>-->
+                        <input type="text" class="form-control border border-primary" list="listCountry" placeholder="Country Name" id="CountryName" required>
+                        <datalist id="listCountry">
+
+                        </datalist>
+                        <input type="text" list="listContestIdCountry" class="form-control border border-primary mt-2" placeholder="Codeforces Contest Id" id="CountryContestId" required>
+                        <datalist id="listContestIdCountry">
+                            
+                        </datalist>
+                        <input type="text" class="form-control border border-primary mt-1" placeholder="Codefroces handle (optional)" name="" id="countryHandle">
+                        <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Country Standing end--------------------------------------------------------------------------------------------------------------------------------->
+        <!--CodeChef Profile start-->
+        <div class="container" id="codechefProfileInput" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <form class="justify-content-center mt-4" id="formCodechefProfile">
+                        <input type="text" class="form-control border border-primary" placeholder="codechef handle" id="codechefUser" required>
+                        <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--CodeChef Profile end-->
+         <!--Atcoder Profile start-->
+         <div class="container" id="atcodeProfileInput" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <form class="justify-content-center mt-4" id="formAtcoderProfile">
+                        <input type="text" class="form-control border border-primary" placeholder="atcoder handle" id="atcoderUser" required>
+                        <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Atcoder Profile end-->
+    </div>
+
+
+
+    <div class="container row">
+        <div class="d-flex justify-content-center">
+            <h1  id="welcome" style="margin-top: 200px;">
+                <a href="" class="typewrite" data-period="2000" data-type='[ "Hi Coder,","WelCome To You.."]'>
+                <span class="wrap"></span>
+                </a>
+            </h1>
+        </div>
+    </div>
+
+
+
+    <!--output-------------------------------------------------------------------------------->
+    <div class="container-fluid" id="Output">
+        <div class="d-flex justify-content-center">
+            <div class="btn btn-success mt-5" id="loader" style="display: none;">
+                <span class="spinner-border spinner-border-sm"></span>
+                <span>Loading...</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p id="error" style="display: none;"></p>
+        </div>
+        <!--profile start-->
+        <div class="container" id="profileOutput" style="display: none;">
+            <div class="d-flex justify-content-center" id="basicInto">
+                <table class="table table-bordered table-hover font-weigth-bold-table col-md-12 col-lg-8 mt-5" style="background-color: white;">
+                    <thead>
+                        <tr class="table-header">
+                            <th colspan="2" class="text-center">Basic Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="text-right col-margin">handle:</td>
+                            <td id="handle">hossain95</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right col-margin">Name:</td>
+                            <td id="name">Mia Hossain</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right col-margin">Organization:</td>
+                            <td id="organization">International Islamic University Chittagong</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right col-margin">Country:</td>
+                            <td id="country">Bangladesh</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right col-margin">Rating:</td>
+                            <td id="rating">1200</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right col-margin">Max Rating:</td>
+                            <td id="maxRating">1400</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="contestInfo" class="d-flex justify-content-center">
+                <table class="table table-bordered table-hover font-weigth-bold-table text-center col-lg-10 mt-5" style="background-color: white;">
+                    <thead>
+                        <tr class="table-header">
+                            <th colspan="5" class="text-center">Contest Info</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr class="text-center">
+                            <th class="firstContest">Contest Name</th>
+                            <th>Rank</th>
+                            <th>Old Rating</th>
+                            <th>New Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contestTable">
+                    </tbody>
+                </table>
+            </div>
+           <div id="problem-list">
+            <div style="text-align: center;">
+                <h6 style="background-color: steelblue; color: white;">Problem solved Contest Time- <span id="p1"></span></h6>
+                <p style="text-align: left; background-color: white;" id="solvedContest"></p>
+            </div>
+            <div style="text-align: center;">
+                <h6 style="background-color: steelblue; color: white;">Total Solved- <span id="p2"></span></h6>
+                <p style="text-align: left; background-color: white;" id="totalSolved"></p>
+            </div>
+            <div style="text-align: center;">
+                <h6 style="background-color: steelblue; color: white;">Unsolved- <span id="p3"></span></h6>
+                <p style="text-align: left; background-color: white;" id="unsolved"></p>
+            </div>
+           </div>
+        </div>
+        <!--profile end-->
+
+        <!--compare profile start-->
+        <div class="container" id="compareProfileOutput" style="display: none;">
+            <div class="mt-5">
+                <table class="table table-bordered table-hover">
+                    <thead style="text-align: center;">
+                        <tr>
+                            <td colspan="3" style="background-color: steelblue; color: white;">Basic Info</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td id="c-handle1">user-1</td>
+                            <td id="c-handle2">user-2</td>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center;">
+                        <tr>
+                            <td style="width: 30%; text-align: left;">Name:</td>
+                            <td style="width: 35%;" id="c-name1"></td>
+                            <td style="width: 35%;" id="c-name2"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Organization:</td>
+                            <td id="c-org1"></td>
+                            <td id="c-org2"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Country:</td>
+                            <td id="c-country1"></td>
+                            <td id="c-country2"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Rating:</td>
+                            <td id="c-rating1"></td>
+                            <td id="c-rating2"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Max Rating:</td>
+                            <td id="c-maxRating1"></td>
+                            <td id="c-maxRating2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-5">
+                <table class="table table-bordered table-hover">
+                    <thead class="text-center">
+                        <tr style="background-color: steelblue;">
+                            <th colspan="3"><h4 style="color: white;">Common Contest</h4></th>
+                        </tr>
+                        <tr>
+                            <th>Contest Name</th>
+                            <th>Rank:: <span id="user1-rank"></span></th>
+                            <th>Rank:: <span id="user2-rank"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="commonContestId">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row mt-5" id="solvedProblem">
+                <div class="col-sm-12 col-md-12 col-lg-6" style="padding: 10px;">
+                   <div>
+                    <h6 style="background-color: steelblue; text-align: center; color: white;" id="firstId"></h6>
+                    <p id="runningContestUser1" style="background-color: white; padding-left: 20px; padding-right: 20px;"></p>
+                   </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6" style="padding: 10px;">
+                   <div>
+                    <h6 style="background-color: steelblue; text-align: center; color: white;" id="secondId"></span></h6>
+                    <p id="runningContestUser2" style="background-color: white; padding-left: 20px; padding-right: 20px;"></p>
+                   </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6" style="padding: 10px;">
+                   
+                    <div>
+                        <h6 style="background-color: steelblue; text-align: center; color: white;" id="thirdId"></h6>
+                        <p id="solvedContestUser1" style="background-color: white; padding-left: 20px; padding-right: 20px;"></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6" style="padding: 10px;">
+                    
+                    <div>
+                        <h6 style="background-color: steelblue; text-align: center; color: white;" id="fourthId"></h6>
+                        <p id="solvedContestUser2" style="background-color: white; padding-left: 20px; padding-right: 20px;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--compare profile end-->
+
+
+
+
+        <!--Organization Standing start-->
+        <div class="container" id="organizationStandingOutput" style="display: none;">
+            <div class="col-md-12 col-lg-12 mt-4">
+                <div id="OrganizationStandingtable">
+                    <table class="table table-bordered table-hover text-center">
+                        
+                        
+
+                        <thead id="OrgFirstRow" style="text-align: left;">
+                            <tr>
+                                <th colspan="6" id="OrgName"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6" id="contestName"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6"><p>Your Organization Rank: <span id="orgRank1"></span></p></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6"><p>Your Global Rank: <span id="orgRank2"></span></p></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Tablebody">
+                            <tr id="firstRow">
+                                <th>#</th>
+                                <th>Global Standing</th>
+                                <th>Handle</th>
+                                <th>Points</th>
+                                <th>Old rating</th>
+                                <th>New rating</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--Organization Standing end-->
+
+        <!--CodeChef output start-->
+        <div class="container" id="codechefProfileOutput" style="display: none;">
+           <div>
+               <table class="table table-bordered table-hover mt-5">
+                   <thead style="background-color: steelblue; color: white; text-align: center;">
+                       <tr>
+                           <th colspan="2"><h5>Basic Info</h5></th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td style="text-align: right;">Name:</td>
+                           <td style="text-align: left;" id="codechefName"></td>
+                       </tr>
+                       <tr>
+                           <td style="text-align: right;">Country:</td>
+                           <td style="text-align: left;" id="codechefCountry"></td>
+                       </tr>
+                       <tr>
+                           <td style="text-align: right;">Institution:</td>
+                           <td style="text-align: left;" id="codechefInstitution"></td>
+                       </tr>
+                       <tr>
+                           <td style="text-align: right;">Rating:</td>
+                           <td style="text-align: left;" id="codechefRating"></td>
+                       </tr>
+                       <tr>
+                           <td style="text-align: right;">Stars</td>
+                           <td style="text-align: left;" id="codechefStars"></td>
+                       </tr>
+                       <tr>
+                        <td style="text-align: right;">Fully Solved</td>
+                        <td style="text-align: left;" id="codechefFullySolved"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Partially Solved</td>
+                        <td style="text-align: left;" id="codechefPartiallySolved"></td>
+                    </tr>
+                   </tbody>
+               </table>
+           </div>
+           <div>
+               <table class="table table-bordered table-hover text-center mt-5">
+                   <thead>
+                       <tr style="background-color: steelblue; color: white;">
+                           <td colspan="4">Contest Rating</td>
+                       </tr>
+                       <tr>
+                        <td>Contest Name</td>
+                        <td>Rating</td>
+                        <td>Country Rank</td>
+                        <td>Global Rank</td>
+                    </tr>
+                   </thead>
+                   <tbody>
+                      <tr>
+                          <td style="text-align: right;" id="codechefLong"></td>
+                          <td id="codechefLongRating"></td>
+                          <td id="codechefLongCountryRank"></td>
+                          <td id="codechefLongGlobalRank"></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align: right;" id="codechefLunch"></td>
+                        <td id="codechefLunchRating"></td>
+                        <td id="codechefLunchCountryRank"></td>
+                        <td id="codechefLunchGlobalRank"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;" id="codechefCook"></td>
+                        <td id="codechefCookRating"></td>
+                        <td id="codechefCookCountryRank"></td>
+                        <td id="codechefCookGlobalRank"></td>
+                    </tr>
+                   </tbody>
+               </table>
+           </div>
+           <div>
+               <table class="table table-bordered table-hover mt-5">
+                   <thead class="text-center">
+                       <tr style="background-color:steelblue; color: white;">
+                           <td colspan="3">Participated Contest</td>
+                       </tr>
+                       <tr>
+                           <td>Contest Name</td>
+                           <td>Rank</td>
+                           <td>Rating</td>
+                       </tr>
+                   </thead>
+                   <tbody id="codechefBody">
+
+                   </tbody>
+               </table>
+           </div>
+        </div>
+        <!--CodeChef output end-->
+
+        <!--Atcoder output start-->
+        <div class="container" id="atcodeProfileOutput" style="display: none;">
+            <div>
+                <table class="table table-bordered table-hover mt-5">
+                    <thead style="text-align: center; background-color: steelblue; color: white;">
+                        <tr>
+                            <td colspan="2">Basic Info</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: right;">User Handle:</td>
+                            <td style="text-align: left;" id="atcoderUserName"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Highest Rating</td>
+                            <td style="text-align: left;" id="atcoderHighestRating"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Rating</td>
+                            <td style="text-align: left;" id="atcoderRating"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Lavel</td>
+                            <td style="text-align: left;" id="atcoderLevel"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--Atcoder output end-->
+
+        <!--Country Standing start-->
+        <div class="container" id="countryStandingOutput" style="display: none;">
+             <div class="col-md-12 col-lg-12 mt-4">
+                <div id="CountryStandingtable">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead id="CountryFirstRow" style="text-align: left;">
+                            <tr>
+                                <th colspan="6" id="CountryNameDisplay"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6" id="CountryContestName"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6"><p>Your Country Rank: <span id="userRankCountry"></span></p></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6"><p>Your Global Rank: <span id="userRankGlobal"></span></p></th>
+                            </tr>
+                        </thead>
+                        <tbody id="CountryTableBody">
+                            <tr>
+                                <th>#</th>
+                                <th>Global Standing</th>
+                                <th>Handle</th>
+                                <th>Points</th>
+                                <th>Old rating</th>
+                                <th>New rating</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--Country Standing end-->
+
+
+        <!--Developer start------------------------------------------------------------------------------------------------------------------------------->
+        <div class="container developer" id="developerOutput" style="display: none;">
+            <div class="row justify-content-center" style="padding-top: 100px;">
+                <h1>
+                    <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, I am Mia Hossain."," I am a Competative Programmar and front-end developer."]'>
+                    <span class="wrap"></span>
+                    </a>
+                </h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-8 d-flex justify-content-center">
+                    <table class="table" id ="tablestyle">
+                        <tr id="trstyle">
+                            <td class="text-right pt-5"><h5>Mia Hossain</h5></td>
+                            <td><img src="image/MiaHossain.jpg" alt=""></td>
+                        </tr>
+                        <tr id="trstyle">
+                            <td class="text-right">E-mail:</td>
+                            <td class="text-left pl-5"><a id="astyle" href="#">miahossain8888@gmail.com</a></td>
+                        </tr>
+                        <tr id="trstyle">
+                            <td class="text-right">Phone:</td>
+                            <td class="text-left pl-5"><a id="astyle" href="#">+8801710476123</a></td>
+                        </tr>
+                        <tr id="trstyle">
+                            <td class="text-right">Linked-In:</td>
+                            <td class="text-left pl-5"><a id="astyle" href="https://www.linkedin.com/in/mia-hossain-423a0117b/" target="black">Mia Hossain</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="container d-flex justify-content-center my-5">
+                    <form class="col-sm-12 col-md-8 col-lg-8 justify-content-center">
+                        <h3>If you want to give feedback</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name....">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your e-mail....">
+                        </div>
+                        <textarea class="form-control" name="" id="" cols="20" rows="6" placeholder="text here"></textarea>
+                        <input type="submit" class="btn btn-primary" name="" id="">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Developer end--------------------------------------------------------------------------------------------------------------------------------->
+
+    </div>
+
+
+    <!--javascript start------------------------------------------->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="program/header.js"></script>
+    <script src="program/control.js"></script>
+    <script src="program/OrganizationStanding.js"></script>
+    <script src="program/CountryStanding.js"></script>
+    <script src="program/developer.js"></script>
+    <script src="program/profile.js" type="text/javascript"></script>
+    <script src="program/compareProfile.js"></script>
+    <script src="program/countryInput.js"></script>
+    <script src="program/orgInput.js"></script>
+    <script src="program/codechef.js"></script>
+    <script src="program/atcode.js"></script>
+    <script src="program/contestId.js"></script>
+</body>
+</html>

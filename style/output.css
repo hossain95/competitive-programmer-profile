@@ -1,0 +1,22 @@
+.font-weigth-bold-table
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+.col-margin
+{
+    width: 50%;
+}
+.table-header
+{
+    background-color: #7f8fa6;
+    color: white;
+}
+.firstContest
+{
+    width: 30%;
+}
+.compareStyle
+{
+    width: 50%;
+}
