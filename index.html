@@ -49,7 +49,7 @@
         </nav>
     </div>
 
-    
+
     <!--input-->
     <div class="container-fluid" id="input">
         <!--Profile Start-->
@@ -86,7 +86,10 @@
                         <datalist id="listOrg">
                             
                         </datalist>
-                        <input type="text" class="form-control border border-primary mt-1" placeholder="Codeforces Contest Id" id="ContestId" required>
+                        <input type="text" list="listContestIdOrg" class="form-control border border-primary mt-1" placeholder="Codeforces Contest Id" id="ContestId" required>
+                        <datalist id="listContestIdOrg">
+                            
+                        </datalist>
                         <input type="text" class="form-control border border-primary mt-1" placeholder="Codeforces handle (optional)" name="" id="orgHandle">
                         <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
                     </form>
@@ -104,8 +107,10 @@
                         <datalist id="listCountry">
 
                         </datalist>
-                        <input type="text" class="form-control border border-primary mt-2" placeholder="Codeforces Contest Id" id="CountryContestId" required>
-                        
+                        <input type="text" list="listContestIdCountry" class="form-control border border-primary mt-2" placeholder="Codeforces Contest Id" id="CountryContestId" required>
+                        <datalist id="listContestIdCountry">
+                            
+                        </datalist>
                         <input type="text" class="form-control border border-primary mt-1" placeholder="Codefroces handle (optional)" name="" id="countryHandle">
                         <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
                     </form>
@@ -603,5 +608,6 @@
     <script src="program/orgInput.js"></script>
     <script src="program/codechef.js"></script>
     <script src="program/atcode.js"></script>
+    <script src="program/contestId.js"></script>
 </body>
 </html>
