@@ -76,17 +76,17 @@
         <!--Organization standing start------------------------------------------------------------------------------------------------------------------------------->
         <div class="container" id="organizationStandingInput" style="display: none;">
             <div class="row justify-content-center">
-                <div class="col-sm-8 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-6 col-lg-4">
                     <form class="justify-content-center mt-4" id="formOrganization">
                         <input list="listOrg" type="text" class="form-control border border-primary" placeholder="Organization Name" id="OrganizationName" required>
                         <datalist id="listOrg">
-                            
-                        </datalist>
-                        <input type="text" list="listContestIdOrg" class="form-control border border-primary mt-1" placeholder="Codeforces Contest Id" id="ContestId" required>
-                        <datalist id="listContestIdOrg">
                             <option value="International Islamic University Chittagong">International Islamic University Chittagong</option>
                             <option value="University of Dhaka">University of Dhaka</option>
                             <option value="Shahjalal University of Science and Technology">Shahjalal University of Science and Technology</option>
+                        </datalist>
+                        <input type="text" list="listContestIdOrg" class="form-control border border-primary mt-1" placeholder="Codeforces Contest Id" id="ContestId" required>
+                        <datalist id="listContestIdOrg">
+                            
                         </datalist>
                         <input type="text" class="form-control border border-primary mt-1" placeholder="Codeforces handle (optional)" name="" id="orgHandle">
                         <input type="submit" class="btn btn-primary btn-lg form-control mt-1">
