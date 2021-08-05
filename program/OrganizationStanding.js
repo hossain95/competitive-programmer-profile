@@ -129,11 +129,6 @@ document.getElementById("formOrganization").addEventListener("submit", (e) =>
                 document.getElementById("tr"+i).appendChild(td5);
                 td5.setAttribute('id', "td5"+i);
                 document.getElementById("td5"+i).innerText = element.oldRating;
-
-                const td6 = document.createElement('td');
-                document.getElementById("tr"+i).appendChild(td6);
-                td6.setAttribute('id', "td6"+i);
-                document.getElementById("td6"+i).innerText = element.newRating;
                 i++;
             });
 
