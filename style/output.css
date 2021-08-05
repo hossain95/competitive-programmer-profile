@@ -20,25 +20,14 @@
 {
     width: 50%;
 }
-@media screen and (max-width: 750px)
-{
-    #formOrganization
-    {
-        margin-left: 12px;
-    }
-    #formCountry
-    {
-        margin-left: 12px;
-    }
-}
 @media screen and (max-width: 590px)
 {
     #formOrganization
     {
-        margin-left: 105px;
+        margin-left: 25px;
     }
     #formCountry
     {
-        margin-left: 105px;
+        margin-left: 25px;
     }
 }
