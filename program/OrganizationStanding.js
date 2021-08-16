@@ -33,22 +33,28 @@ document.getElementById("formOrganization").addEventListener("submit", (e) =>
                       rank:0,
                       handle: AllUser[i].handle,
                       points: 0,
-                      oldRating: AllUser[i].oldRating,
-                      newRating: AllUser[i].newRating,
+                      oldRating: "NA",
+                      newRating: "NA",
                   };
                   countryUserMap.set(AllUser[i].handle, tem);
                }
             }
             //console.log(countryUserMap);
             var ratingChange = await fetch(`https://codeforces.com/api/contest.ratingChanges?contestId=${ContestId}`).then(response => response.json());
-            ratingChange = ratingChange.result;
-            console.log(ratingChange);
-            for(var i = 0; i < ratingChange.length; i++)
+            if(ratingChange.status != "FAILED")
             {
-               if(countryUserMap.get(ratingChange[i].handle))
+               if(ratingChange.result.length > 0)
                {
-                  countryUserMap.get(ratingChange[i].handle).oldRating = ratingChange[i].oldRating;
-                  countryUserMap.get(ratingChange[i].handle).newRating = ratingChange[i].newRating;
+                  ratingChange = ratingChange.result;
+                  console.log(ratingChange);
+                  for(var i = 0; i < ratingChange.length; i++)
+                  {
+                     if(countryUserMap.get(ratingChange[i].handle))
+                     {
+                        countryUserMap.get(ratingChange[i].handle).oldRating = ratingChange[i].oldRating;
+                        countryUserMap.get(ratingChange[i].handle).newRating = ratingChange[i].newRating;
+                     }
+                  }
                }
             }
             var selectedContestant = new Map();
